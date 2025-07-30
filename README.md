@@ -9,6 +9,7 @@
 ---
 
 ### 🔗 Demo
+![Portfolio Screenshot](./assets/screenshot.png)
 
 🖥️ [Live Site](https://your-live-link.com)  
 📂 [GitHub Repo](https://github.com/Gobikaulagu/Portfolio-react)
@@ -33,16 +34,9 @@ This project was created using the following technologies:
 - ⚛️ React.js
 - 🌐 HTML5 + CSS3
 - 🎨 Bootstrap
-- 📦 Node.js
-- 🖥️ Express.js
 - 🔧 Visual Studio Code
-- ☁️ Vercel
 
----
 
-### 📸 Screenshot
 
-![Portfolio Screenshot](./assets/screenshot.png)
 
----
 
