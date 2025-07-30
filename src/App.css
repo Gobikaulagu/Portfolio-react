@@ -1,38 +1,305 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+  color: #222;
+  min-height: 100vh;
+}
+
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: transparent;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Remove margin above navbar */
+nav.navbar {
+  margin-top: 0 !important;
+  margin-bottom: 0;
+  box-shadow: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Home section flush with navbar */
+.home-section {
+  margin-top: 0 !important;
+  padding-top: 4rem;
+  background: transparent !important;
+}
+
+/* Section General */
+.section, .skills-section, .projects-section, .certificates-section, .internship-section, .resume-section, .contact-section {
+  background: transparent !important;
+}
+
+/* Remove any extra top padding from first section */
+.section:first-child, .home-section {
+  padding-top: 4rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a222b;
+  color: #fff;
+  padding: 1.2rem 2.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+}
+
+.navbar-links li a:hover, .navbar-links li a:focus {
+  background: #00bfae;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.2rem;
+  }
+  .navbar-links {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hero Section */
+.home-section h1 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.home-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.hero-btns a, .hero-btns button {
+  background: #00bfae;
+  color: #fff;
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.hero-btns a:hover, .hero-btns button:hover {
+  background: #008e7c;
+}
+
+/* Section General */
+.section {
+  padding: 3rem 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  margin-top: 2.5rem;
+}
+.section h2 {
+  margin-bottom: 1.5rem;
+  color: #1a222b;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Skills/Services */
+.skills-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+.skills-section li {
+  background: #e0f7fa;
+  color: #00796b;
+  padding: 0.8rem 1.3rem;
+  border-radius: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Projects */
+.projects-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+.project-card {
+  background: #f4f7fa;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  padding: 1.5rem 1.2rem;
+  width: 300px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  border: 1px solid #e0e0e0;
+}
+.project-card:hover {
+  box-shadow: 0 4px 16px rgba(0,191,174,0.15);
+  transform: translateY(-6px) scale(1.03);
+}
+
+/* Certificates, Resume, Internship */
+.resume-download-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #00bfae;
+  color: #fff;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.resume-download-btn:hover {
+  background: #008e7c;
+}
+
+/* Contact */
+.contact-section p {
+  margin-bottom: 1.2rem;
+}
+.contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 1.5rem auto 0 auto;
+}
+.contact-form input,
+.contact-form textarea {
+  padding: 0.85rem;
+  border: 1px solid #b2dfdb;
+  border-radius: 1rem;
+  font-size: 1rem;
+  background: #f9f9f9;
+}
+.contact-form button {
+  background: #00bfae;
+  color: #fff;
+  border: none;
+  padding: 0.85rem;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.contact-form button:hover {
+  background: #008e7c;
 }
 
-.App-link {
-  color: #61dafb;
+/* Footer */
+.footer {
+  background: #1a222b;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  border-radius: 2rem 2rem 0 0;
+  margin-top: 3rem;
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (max-width: 600px) {
+  .section {
+    padding: 1.5rem 0.5rem;
+    border-radius: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .projects-cards {
+    flex-direction: column;
+    gap: 1rem;
   }
+  .project-card {
+    width: 100%;
+  }
+  .skills-section ul {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+}
+
+/* Card and content backgrounds for readability */
+.project-card, .cert-marquee a, .contact-form, .resume-section a, .internship-section a {
+  background: rgba(255,255,255,0.95) !important;
+  color: #222 !important;
+}
+
+.project-card, .cert-marquee a {
+  box-shadow: 0 2px 12px rgba(160, 140, 209, 0.10);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2d1457;
+}
+
+/* Buttons */
+.btn, .resume-section a, .internship-section a, .contact-form button {
+  background: #a18cd1 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.btn:hover, .resume-section a:hover, .internship-section a:hover, .contact-form button:hover {
+  background: #7c5eb6 !important;
+}
+
+/* Progress bars */
+.progress-bar {
+  background: #a18cd1 !important;
+}
+
+/* Section padding for all */
+.section, .skills-section, .projects-section, .certificates-section, .internship-section, .resume-section, .contact-section {
+  padding: 4rem 0;
+}
+
+/* Center all section content */
+.section, .skills-section, .projects-section, .certificates-section, .internship-section, .resume-section, .contact-section {
+  text-align: center;
 }
